@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','default-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','https://youtube-playlist-duration-checker.onrender.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','youtube-playlist-duration-checker.onrender.com']
 
 # Application definition
 
