@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from .views import Home
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('duration_app.urls')),
+    path('',Home,name='Home'),
+    # path('api/playlist_duration/', get_playlist_duration, name='playlist_duration'),
 ]

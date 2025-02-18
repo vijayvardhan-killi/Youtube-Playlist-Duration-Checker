@@ -36,8 +36,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','default-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['localhost','127.0.0.1','https://youtube-playlist-duration-checker.onrender.com']
 
 # Application definition
 
@@ -142,8 +141,9 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",  # or "http://127.0.0.1:5173"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # or "http://127.0.0.1:5173"
+    "https://youtube-playlist-duration-checker-f1t7.onrender.com",
+]
