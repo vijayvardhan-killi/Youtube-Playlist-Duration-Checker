@@ -9,7 +9,7 @@ export default async function getData(video_id){
             throw new Error("Failed to Fetch Data");
         }
         const data = await response.json();
-        console.log("in API.js",data)
+        // console.log("in API.js",data)
         return data
     }catch(error){
         console.error("Error While Fetching Data :",error);

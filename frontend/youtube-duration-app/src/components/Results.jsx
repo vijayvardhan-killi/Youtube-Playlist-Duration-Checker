@@ -30,9 +30,9 @@ const Results = ({playListDetails}) => {
     else if (sortField === "duration") {
       return filteredData.sort((a, b) => {
         if (sortOrder === "asc") {
-          return b.seconds - a.seconds;
-        } else {
           return a.seconds - b.seconds;
+        } else {
+          return b.seconds - a.seconds;
         }
       });
     }
