@@ -1,4 +1,4 @@
-// const BASE_URL = "http://127.0.0.1:8000"; uncomment for dev testing
+// const BASE_URL = "http://127.0.0.1:8000"; //uncomment for dev testing
 const BASE_URL = 'https://youtube-playlist-duration-checker.onrender.com';
 
 export default async function getData(video_id){

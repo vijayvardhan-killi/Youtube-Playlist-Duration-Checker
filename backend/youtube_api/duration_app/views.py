@@ -64,6 +64,7 @@ def calculate_playlist_duration(playlist_id):
                     'title': title,
                     'thumbnail':thumbnail,
                     'duration': formatted_duration,
+                    'seconds': seconds,
                 })
 
             # Check if there are more pages
@@ -89,7 +90,7 @@ def calculate_playlist_duration(playlist_id):
         logger.error(f"An unexpected error occurred: {e}")
         raise Exception(f"An unexpected error occurred: {e}")
 
-    return [format_duration(total_seconds), format_duration(total_seconds//len(video_details)),video_details]
+    return [format_duration(total_seconds), format_duration(total_seconds//len(video_details)),video_details ,total_seconds]
 
 
 def format_duration(duration):
@@ -127,11 +128,12 @@ def get_playlist_duration(request):
             return JsonResponse({'error': 'Missing playlist ID'}, status=400)
 
         # Calculate playlist duration
-        duration,average_duration , video_details = calculate_playlist_duration(playlist_id)
+        duration,average_duration , video_details ,total_seconds = calculate_playlist_duration(playlist_id)
 
         # Return JSON response
         return JsonResponse({
             'playlist_duration': duration,
+            'total_seconds': total_seconds,
             'average_duration':average_duration,
             'video_details': video_details,
         })
