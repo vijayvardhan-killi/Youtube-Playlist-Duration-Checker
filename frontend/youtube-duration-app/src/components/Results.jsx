@@ -24,12 +24,12 @@ const Results = ({playListDetails}) => {
       video.title.toLowerCase().includes(searchText.toLowerCase())
   );
 
-    if (sortField === "default") {
+    if (sortField === "default" && sortOrder === "default") {
       return [...filteredData];
     }
     else if (sortField === "duration") {
       return filteredData.sort((a, b) => {
-        if (sortOrder === "asc") {
+        if (sortOrder === "asc" || sortOrder === "default") {
           return a.seconds - b.seconds;
         } else {
           return b.seconds - a.seconds;
@@ -38,7 +38,7 @@ const Results = ({playListDetails}) => {
     }
     else if (sortField === 'title') {
       return filteredData.sort((a, b) => {
-        if (sortOrder === "asc") {
+        if (sortOrder === "asc" || sortOrder === "default") {
           return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
         } else {
           return b.title.toLowerCase().localeCompare(a.title.toLowerCase());

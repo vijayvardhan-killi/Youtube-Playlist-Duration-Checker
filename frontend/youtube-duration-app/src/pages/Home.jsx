@@ -16,14 +16,28 @@ const Home = () => {
     setError("");
 
     try {
-      const data = await getData(playlist_id);
+      const parsedUrl = new URL(playlist_id);
+      const id = parsedUrl.searchParams.get("list");
+      if (!id) {
+        setError("Invalid Playlist URL");
+        const error = new Error("Invalid Playlist URL");
+        error.name = "InvalidPlaylistUrlError";
+        throw error;
+      }
+      const data = await getData(id);
       if (data) {
         setplayListDetails(data);
       } else {
         setError("No Data Found");
       }
     } catch (err) {
-      setError("An error Occured while Fetching Data");
+      if (err.name === "InvalidPlaylistUrlError") {
+        console.log(err)
+        setError(err.message);
+      } else {
+        console.error("Error while fetching data:", err);
+        setError("An error occurred while fetching data. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
