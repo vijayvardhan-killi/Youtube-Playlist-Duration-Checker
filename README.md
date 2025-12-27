@@ -7,7 +7,7 @@ Built with a modern **React + FastAPI serverless architecture**.
 
 ## 🎬 Demo Video
 
-
+https://github.com/user-attachments/assets/3b4cf867-22a4-41dc-a130-8d80bbef8c6f
 
 ---
 
