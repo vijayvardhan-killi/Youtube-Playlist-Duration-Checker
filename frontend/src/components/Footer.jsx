@@ -1,12 +1,7 @@
-import React from 'react'
-
-const Footer = () => {
-  return ( 
-    <div className='bg-youtube-black text-youtube-light-gray p-3 '>
-      <p className='text-center p-2 capitalize font-semibold'>Tracking your time, one playlist at a time.</p>
-      <p className='text-xl text-center  uppercase'>Made with ❤️</p>
-    </div>
-  )
+export default function Footer() {
+  return (
+    <footer className="text-center text-xs text-zinc-300 dark:text-zinc-700 py-6">
+      duration.calc &middot; Tracking your time, one playlist at a time.
+    </footer>
+  );
 }
-
-export default Footer

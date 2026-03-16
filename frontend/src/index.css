@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-*{
-    /* background-color: ; */
-    /* color-scheme: dark;     */
-    scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
 }
