@@ -1,3 +1,5 @@
+// import { GoogleLogin } from "@react-oauth/google";
+
 const PlayIcon = () => (
   <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
     <path d="M10 8l6 4-6 4V8zm11-5H3C1.9 3 1 3.9 1 5v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
@@ -23,6 +25,19 @@ export default function Header({ count = 0 }) {
         </div>
         <span className="text-xs bg-red-50 dark:bg-red-950/50 text-red-500 border border-red-200 dark:border-red-800 px-2.5 py-1 rounded-full font-semibold">
           {count} videos
+          {/* <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              fetch("http://localhost:8000/api/google-login", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  token: credentialResponse.credential,
+                }),
+              });
+            }}
+          /> */}
         </span>
       </div>
     </header>
